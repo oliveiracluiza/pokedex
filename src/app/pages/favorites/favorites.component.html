@@ -1,0 +1,37 @@
+<header>
+    <div class="header-img">
+      <img src='../../../assets/icons/star-full.png' alt="Logo Favoritos">
+    </div>
+  </header>
+  
+  <body>
+    <div class="img-nm" *ngIf="favoritePokemons.length > 0; else noFavorites">
+      <section class="listagem">
+        <a *ngFor="let pokemon of favoritePokemons" [routerLink]="['details', pokemon.status.id]" class="pokemon">
+          <section class="pokemon-status">
+            <h2>{{ pokemon.name }}
+              <div class="fav">
+                <button type="button" (click)="toggleFavorite($event, pokemon.status.id)" class="remove-button">
+                    <img src="../../../assets/icons/menos.webp" alt="remove" class="rem-img">
+                </button>
+              </div>
+            </h2>
+          </section>
+          <section class="pokemon-image">
+            <img [src]="pokemon.status.sprites.front_default" [alt]="pokemon.name">
+          </section>
+        </a>
+      </section>
+    </div>
+  
+    <ng-template #noFavorites>
+      <p>Você ainda não selecionou nenhum pokemon favorito.</p>
+      <div class="botao-voltar">
+        <button class="voltar" routerLink="/">Escolher Favoritos</button>
+      </div>
+        
+    </ng-template>
+  </body>
+  
+
+

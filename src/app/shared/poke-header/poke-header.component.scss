@@ -1,0 +1,26 @@
+@import '../../../config-scss/rem-calc.scss';
+
+:host {
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: rem-calc(40) 0;
+        padding-bottom: 10px;
+
+        img {
+            padding-bottom: 20px;
+        }
+
+        .mudar-rota {
+            background-color: var(--secondary);
+            width:100px;
+            height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            
+          }
+
+    }
+}
